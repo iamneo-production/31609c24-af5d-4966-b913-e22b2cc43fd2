@@ -1,4 +1,6 @@
-.app-footer {
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
+.footer {
+  padding: 10px;
+  background-color: #f0f0f0;
+  text-align: center;
 }
+

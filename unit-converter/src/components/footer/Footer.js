@@ -1,12 +1,14 @@
-import "./Footer.css";
 
+import { Container } from "reactstrap";
+import './Footer.css';
 const Footer = () => {
   return (
     <>
-      <div className="app-footer"></div>
-      <p>
+    <footer className="footer">
+      <Container>
         This page contains information about <b>React Js Hackathon</b>, Thanks.
-      </p>
+        </Container>
+    </footer>
     </>
   );
 };

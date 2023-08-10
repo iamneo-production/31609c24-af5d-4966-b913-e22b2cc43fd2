@@ -6,17 +6,17 @@ import UnitConverter from "./components/mainComponents/unitConverter/UnitConvert
 function App() {
   return (
     <>
-      <header>
+    
         <Header />
-      </header>
+    
 
       <main>
         <UnitConverter />
       </main>
 
-      <footer>
-        <Footer />
-      </footer>
+    
+        <Footer/>
+      
     </>
   );
 }
