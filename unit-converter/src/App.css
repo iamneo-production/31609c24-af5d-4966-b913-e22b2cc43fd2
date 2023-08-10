@@ -1,0 +1,23 @@
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}

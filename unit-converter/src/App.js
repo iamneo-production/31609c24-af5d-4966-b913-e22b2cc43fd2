@@ -1,9 +1,22 @@
-import './App.css';
+import "./App.css";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import UnitConverter from "./components/mainComponents/unitConverter/UnitConverter";
 
 function App() {
   return (
     <>
-      <h1>Unit Converter</h1>
+      <header>
+        <Header />
+      </header>
+
+      <main>
+        <UnitConverter />
+      </main>
+
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
