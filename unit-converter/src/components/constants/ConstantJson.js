@@ -11,28 +11,28 @@ const unitTypes = [
     title: "Weight",
     description: "Convert between different weight units.",
     button: "Convert Weight",
-    to: "/conver-weight-units"
+    to: "/convert-weight-units"
   },
   {
     id: "3",
     title: "Temperature",
     description: "Convert between different temperature units.",
     button: "Convert Temperature",
-    to: "/conver-temperature-units"
+    to: "/convert-temperature-units"
   },
   {
     id: "4",
     title: "Time",
     description: "Convert between different time units.",
     button: "Convert Time",
-    to: "/conver-time-units"
+    to: "/convert-time-units"
   },
   {
     id: "5",
     title: "Speed",
     description: "Convert between different speed units.",
     button: "Convert Speed",
-    to: "/conver-speed-units"
+    to: "/convert-speed-units"
   },
 ];
 
