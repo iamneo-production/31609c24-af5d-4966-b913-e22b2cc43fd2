@@ -18,3 +18,7 @@ button {
 .app-body{
   padding: 5rem 1rem 2rem 1rem;
 }
+
+a {
+  text-decoration: none !important;
+}
