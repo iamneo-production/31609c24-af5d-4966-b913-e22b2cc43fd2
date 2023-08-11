@@ -1,26 +1,16 @@
+import React from "react";
 import "./Card.css";
-import {
-  Card,
-  CardBody,
-  CardText,
-  CardTitle,
-  Button,
-} from "reactstrap";
+import { Card, CardBody, CardText, CardTitle, Button } from "reactstrap";
 
-const Cards = () => {
+const Cards = ({ title, text, buttonText, buttonFunction }) => {
   return (
-    <>
-      <Card className="card">
-        <CardBody>
-          <CardTitle>Length/Height</CardTitle>
-          <CardText>
-            Generally,length is defined as distance between 2 points ,it is
-            measure in m,cm,km,mm,nm,feet,inch
-          </CardText>
-          <Button>Convert length</Button>
-        </CardBody>
-      </Card>
-    </>
+    <Card className="cardComponent">
+      <CardBody>
+        <CardTitle><b>{title}</b></CardTitle>
+        <CardText>{text}</CardText>
+      </CardBody>
+    </Card>
   );
 };
+
 export default Cards;

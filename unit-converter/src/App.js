@@ -10,13 +10,10 @@ function App() {
     <>
       <Router>
           <Header />
-
           <Routes>
             <Route path="/" element={<UnitConverter />} />
-
             <Route path="/convert-length-units" element={<LengthConverter />} />
           </Routes>
-
           <Footer />
       </Router>
     </>
