@@ -1,0 +1,15 @@
+{
+    "lengthUnits": ["millimeter",
+    "centimeter",
+    "meter",
+    "kilometer",
+    "inch",
+    "foot", 
+    "yard", 
+    "mile"],
+    "weightUnits": ["kilograms", "pounds"],
+    "temperatureUnits": ["celsius", "fahrenheit"],
+    "timeUnits": ["celsius", "fahrenheit"],
+    "speedUnits": ["celsius", "fahrenheit"]
+}
+
