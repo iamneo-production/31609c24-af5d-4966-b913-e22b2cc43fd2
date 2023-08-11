@@ -1,22 +1,24 @@
 import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import UnitConverter from "./components/mainComponents/unitConverter/UnitConverter";
+import LengthConverter from "./components/mainComponents/lengthConverter/LengthConverter";
 
 function App() {
   return (
     <>
-    
-        <Header />
-    
+      <Router>
+          <Header />
 
-      <main>
-        <UnitConverter />
-      </main>
+          <Routes>
+            <Route path="/" element={<UnitConverter />} />
 
-    
-        <Footer/>
-      
+            <Route path="/convert-length-units" element={<LengthConverter />} />
+          </Routes>
+
+          <Footer />
+      </Router>
     </>
   );
 }

@@ -15,9 +15,6 @@ button {
   box-sizing: border-box;
 }
 
-footer {
-  margin-top: auto;
-  background-color: #f0f0f0;
-  padding: 20px;
-  text-align: center;
+.app-body{
+  padding: 5rem 1rem 2rem 1rem;
 }
