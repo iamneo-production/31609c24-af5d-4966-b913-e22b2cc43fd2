@@ -14,10 +14,6 @@ const WeightConverter = () => {
 
 
   const [weightUnits, setWeightUnits] = useState([]);
-  const [value, setValue] = useState();
-  const [convertedValue, SetConvertedValue] = useState();
-  const [sourceUnit, setSourceUnit] = useState();
-  const [targetUnit, setTargetUnit] = useState();
 
   const [value, setValue] = useState();
 
