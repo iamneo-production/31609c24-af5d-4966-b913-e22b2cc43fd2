@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://ide-ecdaabceafcbbbedebdabfcabcbacaaef.project.examly.io/proxy/8080/";
+const BASE_URL = "https://ide-beddbadbbbedebdabfcabcbacaaef.project.examly.io/proxy/8080/";
 
 const fetchLengthUnits = () => {
   return axios.get(`${BASE_URL}/lengthUnits`)
@@ -32,5 +32,12 @@ const fetchWeightUnits = () => {
         console.error("Error", error);
       });
     };
+    const fetchTimeUnits = () => {
+      return axios.get(`${BASE_URL}/timeUnits`)
+        .then(response => response.data)
+        .catch(error => {
+          console.error("Error", error);
+        });
+      };
 
-export {fetchLengthUnits, fetchWeightUnits,fetchTemperatureUnits,fetchSpeedUnits};
+export {fetchLengthUnits, fetchWeightUnits,fetchTemperatureUnits,fetchSpeedUnits,fetchTimeUnits};
