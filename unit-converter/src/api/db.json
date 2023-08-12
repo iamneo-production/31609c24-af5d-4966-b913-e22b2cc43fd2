@@ -10,6 +10,6 @@
     "weightUnits": ["grams","kilograms", "pounds"],
     "temperatureUnits": ["celsius", "fahrenheit"],
     "timeUnits": ["celsius", "fahrenheit"],
-    "speedUnits": ["celsius", "fahrenheit"]
+    "speedUnits": ["miles_per_hour","kilometers_per_hour","meters_per_second"]
 }
 
