@@ -1,0 +1,7 @@
+.center-card {
+    max-width: 300px; /* Set the desired card width */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 10vh; /* Center vertically (adjust as needed) */
+    background-color: lightpink;
+  }
+  

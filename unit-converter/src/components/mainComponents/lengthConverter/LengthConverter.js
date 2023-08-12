@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
+import { Row, Col, FormGroup, Label, Input, Button,Card,Container} from "reactstrap";
 import { fetchLengthUnits } from "../../../api/Api";
 import "./LengthConverter.css";
 
@@ -91,6 +91,10 @@ const LengthConverter = () => {
   };
 
   return (
+    <Container className="d-flex justify-content-center align-items-center min-vh-100">
+
+    <Card className="centre-card" color="light">
+
     <Row className="container-fluid app-body">
       <h3>Length Conversion</h3>
       <Row>
@@ -104,6 +108,8 @@ const LengthConverter = () => {
             />
           </FormGroup>
         </Col>
+        </Row>
+        <Row>
         <Col md={3}>
           <FormGroup>
             <Label>Source Unit</Label>
@@ -170,6 +176,9 @@ const LengthConverter = () => {
         </p>
       )}
     </Row>
+  
+    </Card>
+    </Container>
   );
 };
 
