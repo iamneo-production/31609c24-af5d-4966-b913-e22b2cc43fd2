@@ -7,6 +7,7 @@ import LengthConverter from "./components/mainComponents/lengthConverter/LengthC
 import WeightConverter from "./components/mainComponents/weightConverter/WeightConverter";
 import TemperatureConverter from "./components/mainComponents/temperatureconverter/TemperatureConverter";
 import SpeedConverter from "./components/mainComponents/speedConverter/SpeedConverter";
+import TimeConverter from "./components/mainComponents/timeConverter/TimeConverter";
 function App() {
   return (
     <>
@@ -18,7 +19,7 @@ function App() {
             <Route path="/convert-length-units" element={<LengthConverter />} />
             <Route path="/convert-temperature-units" element={<TemperatureConverter />} />
             <Route path="/convert-speed-units" element={<SpeedConverter />} />
-
+            <Route path="/convert-time-units" element={<TimeConverter />} />
           </Routes>
           <Footer />
       </Router>
