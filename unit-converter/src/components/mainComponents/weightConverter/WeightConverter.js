@@ -28,8 +28,6 @@ const WeightConverter = () => {
       let convertedValueInGram = value;
 
       switch (sourceUnit) {
-        case "milligrams":
-          convertedValueInGram *= 0.001;
         case "kilograms":
           convertedValueInGram *= 1000;
           break;
@@ -43,8 +41,6 @@ const WeightConverter = () => {
       let convertedValueInTargetUnit = convertedValueInGram;
 
       switch (targetUnit) {
-        case "milligrams":
-          convertedValueInTargetUnit /= 0.001;
         case "kilograms":
           convertedValueInTargetUnit /= 1000;
           break;

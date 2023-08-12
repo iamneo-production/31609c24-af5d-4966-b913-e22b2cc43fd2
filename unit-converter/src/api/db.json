@@ -7,7 +7,7 @@
     "foot", 
     "yard", 
     "mile"],
-    "weightUnits": ["milligrams","grams","kilograms", "pounds"],
+    "weightUnits": ["grams","kilograms", "pounds"],
     "temperatureUnits": ["celsius", "fahrenheit"],
     "timeUnits": ["celsius", "fahrenheit"],
     "speedUnits": ["celsius", "fahrenheit"]
