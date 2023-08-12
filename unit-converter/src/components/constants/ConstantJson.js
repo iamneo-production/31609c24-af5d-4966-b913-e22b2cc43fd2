@@ -4,16 +4,14 @@ const unitTypes = [
     title: "Length",
     description: "Convert between different length units.",
     button: "Convert Length",
+    to: "/convert-length-units"
   },
   {
     id: "2",
     title: "Weight",
     description: "Convert between different weight units.",
     button: "Convert Weight",
-<<<<<<< HEAD
-=======
     to: "/convert-weight-units"
->>>>>>> 6948ac99911d2fb0571eb06edf1abccb3c6fe4f1
   },
   {
     id: "3",

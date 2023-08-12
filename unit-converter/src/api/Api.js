@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://ide-bbcfcbfffcbabbbedebdabfcabcbacaaef.project.examly.io/proxy/8080";
+const BASE_URL = "https://ide-dedcfacedbbbedebdabfcabcbacaaef.project.examly.io/proxy/8080/";
 
 const fetchLengthUnits = () => {
   return axios.get(`${BASE_URL}/lengthUnits`)
