@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
+
+import { Row, Col, FormGroup, Label, Input, Button,Card,Container } from "reactstrap";
+
 import { fetchWeightUnits } from "../../../api/Api";
 
 const WeightConverter = () => {
@@ -71,6 +73,11 @@ const WeightConverter = () => {
   };
 
   return (
+
+    <Container className="d-flex justify-content-center align-items-center min-vh-100">
+
+    <Card className="centre-card" style={ {background: 'radial-gradient(circle,rgba(238, 174, 202, 1) 0%,rgba(148, 187, 233, 1) 100%)'}}>
+
     <Row className="container-fluid app-body">
       <h3>Weight Conversion</h3>
       <Row>
@@ -84,6 +91,8 @@ const WeightConverter = () => {
             />
           </FormGroup>
         </Col>
+        </Row>
+        <Row>
         <Col md={3}>
           <FormGroup>
             <Label>Source Unit</Label>
@@ -118,7 +127,7 @@ const WeightConverter = () => {
               onChange={(e) => {
                 const selectedValue = e.target.value;
                 if (selectedValue === "") {
-                  setTargetUnit("");
+                  setTargetUnit(""); 
                   SetConvertedValue();
                 } else {
                   setTargetUnit(selectedValue);
@@ -149,6 +158,9 @@ const WeightConverter = () => {
         </p>
       )}
     </Row>
+  
+    </Card>
+    </Container>
   );
 };
 
