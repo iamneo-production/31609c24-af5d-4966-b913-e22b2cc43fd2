@@ -11,12 +11,17 @@ const LengthConverter = () => {
   const [sourceUnit, setSourceUnit] = useState();
   const [targetUnit, setTargetUnit] = useState();
 
+  const fetchData = async () => {
+    try {
+      const data = await fetchLengthUnits();
+      setLengthUnits(data);
+    } catch (error) {
+      // Handle error here if needed
+    }
+  };
+
   useEffect(() => {
-    fetchLengthUnits()
-      .then((data) => {
-        setLengthUnits(data);
-      })
-      .catch((error) => {});
+    fetchData();
   }, []);
 
   useEffect(() => {
