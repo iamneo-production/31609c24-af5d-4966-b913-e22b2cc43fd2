@@ -93,7 +93,7 @@ const LengthConverter = () => {
   return (
     <Container className="d-flex justify-content-center align-items-center min-vh-100">
 
-    <Card className="centre-card" color="light">
+    <Card className="centre-card" style={ {background: 'radial-gradient(circle,rgba(238, 174, 202, 1) 0%,rgba(148, 187, 233, 1) 100%)'}}>
 
     <Row className="container-fluid app-body">
       <h3>Length Conversion</h3>

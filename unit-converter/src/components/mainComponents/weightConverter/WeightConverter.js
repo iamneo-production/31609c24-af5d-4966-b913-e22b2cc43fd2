@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
+import { Row, Col, FormGroup, Label, Input, Button,Card,Container } from "reactstrap";
 
 import { fetchWeightUnits } from "../../../api/Api";
 
@@ -131,166 +131,94 @@ const WeightConverter = () => {
 
   return (
 
+    <Container className="d-flex justify-content-center align-items-center min-vh-100">
+
+    <Card className="centre-card" style={ {background: 'radial-gradient(circle,rgba(238, 174, 202, 1) 0%,rgba(148, 187, 233, 1) 100%)'}}>
+
     <Row className="container-fluid app-body">
-
       <h3>Weight Conversion</h3>
-
       <Row>
-
         <Col md={6}>
-
           <FormGroup>
-
             <Label>Enter Source Value in Number</Label>
-
             <Input
-
               type="number"
-
               value={value}
-
               onChange={(e) => setValue(e.target.value)}
-
             />
-
           </FormGroup>
-
         </Col>
-
+        </Row>
+        <Row>
         <Col md={3}>
-
           <FormGroup>
-
             <Label>Source Unit</Label>
-
             <Input
-
               type="select"
-
               value={sourceUnit}
 
-
-
-
               onChange={(e) => {
-
                 const selectedValue = e.target.value;
-
                 if (selectedValue === "") {
-
                   setSourceUnit("");
-
                   SetConvertedValue();
-
                 } else {
-
                   setSourceUnit(selectedValue);
-
                 }
-
               }}
-
             >
-
                <option value="">Select</option>
-
               {weightUnits.map((unit) => (
-
                 <option key={unit} value={unit}>
-
                   {unit}
-
                 </option>
-
               ))}
-
             </Input>
-
           </FormGroup>
-
         </Col>
-
         <Col md={3}>
-
           <FormGroup>
-
             <Label>Target Unit</Label>
-
             <Input
-
               type="select"
-
               value={targetUnit}
-
               onChange={(e) => {
-
                 const selectedValue = e.target.value;
-
                 if (selectedValue === "") {
-
-                  setTargetUnit("");
-
+                  setTargetUnit(""); 
                   SetConvertedValue();
-
                 } else {
-
                   setTargetUnit(selectedValue);
-
                 }
-
               }}
-
             >
-
                <option value="">Select</option>
-
               {weightUnits.map((unit) => (
-
                 <option key={unit} value={unit}>
-
                   {unit}
-
                 </option>
-
               ))}
-
             </Input>
-
           </FormGroup>
-
         </Col>
-
       </Row>
-
       <Row className="mb-4">
-
         <Col>
-
           <Button onClick={convertUnits} disabled={!targetUnit} outline>
-
             Convert
-
           </Button>
-
         </Col>
-
       </Row>
-
-
-
 
       {convertedValue && value && (
-
         <p>
-
           {value} {sourceUnit} = {convertedValue} {targetUnit}
-
         </p>
-
       )}
-
     </Row>
-
+  
+    </Card>
+    </Container>
   );
 
 };

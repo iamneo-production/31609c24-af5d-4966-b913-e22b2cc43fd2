@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
+import { Row, Col, FormGroup, Label, Input, Button ,Card,Container} from "reactstrap";
 import { fetchTimeUnits } from "../../../api/Api"; // You need to replace this with the actual API function
 
 const TimeConverter = () => {
@@ -63,6 +63,10 @@ const TimeConverter = () => {
   };
 
   return (
+    <Container className="d-flex justify-content-center align-items-center min-vh-100">
+
+    <Card className="centre-card" style={ {background: 'radial-gradient(circle,rgba(238, 174, 202, 1) 0%,rgba(148, 187, 233, 1) 100%)'}}>
+
     <Row className="container-fluid app-body">
       <h3>Time Conversion</h3>
       <Row>
@@ -76,12 +80,15 @@ const TimeConverter = () => {
             />
           </FormGroup>
         </Col>
+        </Row>
+        <Row>
         <Col md={3}>
           <FormGroup>
             <Label>Source Unit</Label>
             <Input
               type="select"
               value={sourceUnit}
+
               onChange={(e) => {
                 const selectedValue = e.target.value;
                 if (selectedValue === "") {
@@ -92,7 +99,7 @@ const TimeConverter = () => {
                 }
               }}
             >
-              <option value="">Select</option>
+               <option value="">Select</option>
               {timeUnits.map((unit) => (
                 <option key={unit} value={unit}>
                   {unit}
@@ -110,14 +117,14 @@ const TimeConverter = () => {
               onChange={(e) => {
                 const selectedValue = e.target.value;
                 if (selectedValue === "") {
-                  setTargetUnit("");
+                  setTargetUnit(""); 
                   setConvertedValue();
                 } else {
                   setTargetUnit(selectedValue);
                 }
               }}
             >
-              <option value="">Select</option>
+               <option value="">Select</option>
               {timeUnits.map((unit) => (
                 <option key={unit} value={unit}>
                   {unit}
@@ -134,12 +141,16 @@ const TimeConverter = () => {
           </Button>
         </Col>
       </Row>
-      {convertedValue !== undefined && value !== undefined && (
+
+      {convertedValue && value && (
         <p>
           {value} {sourceUnit} = {convertedValue} {targetUnit}
         </p>
       )}
     </Row>
+  
+    </Card>
+    </Container>
   );
 };
 

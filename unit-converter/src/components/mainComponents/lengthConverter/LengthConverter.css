@@ -2,6 +2,11 @@
     max-width: 300px; /* Set the desired card width */
     margin: 0 auto; /* Center horizontally */
     margin-top: 10vh; /* Center vertically (adjust as needed) */
-    background-color: lightpink;
+    
+    background: radial-gradient(
+      circle,
+      rgba(238, 174, 202, 1) 0%,
+      rgba(148, 187, 233, 1) 100%
+    );
   }
   

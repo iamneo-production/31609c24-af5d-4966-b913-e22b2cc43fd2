@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
+import { Row, Col, FormGroup, Label, Input, Button,Card,Container } from "reactstrap";
 import { fetchSpeedUnits } from "../../../api/Api"; // Replace with actual API function
 
 const SpeedConverter = () => {
@@ -59,6 +59,9 @@ const SpeedConverter = () => {
   };
 
   return (
+    <Container className="d-flex justify-content-center align-items-center min-vh-100">
+        <Card className="centre-card" style={ {background: 'radial-gradient(circle,rgba(238, 174, 202, 1) 0%,rgba(148, 187, 233, 1) 100%)'}}>
+
     <Row className="container-fluid app-body">
       <h3>Speed Conversion</h3>
       <Row>
@@ -72,6 +75,8 @@ const SpeedConverter = () => {
             />
           </FormGroup>
         </Col>
+        </Row>
+        <Row>
         <Col md={3}>
           <FormGroup>
             <Label>Source Unit</Label>
@@ -136,6 +141,8 @@ const SpeedConverter = () => {
         </p>
       )}
     </Row>
+    </Card>
+    </Container>
   );
 };
 
