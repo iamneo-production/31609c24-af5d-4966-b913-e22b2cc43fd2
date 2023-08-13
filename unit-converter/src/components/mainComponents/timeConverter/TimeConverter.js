@@ -68,7 +68,7 @@ const TimeConverter = () => {
           convertedValueResult/=60;
           break;
         case "minutes":
-          convertedValueResult;
+          convertedValueResult*=1;
           break;
         case "seconds":
           convertedValueResult*=60;
