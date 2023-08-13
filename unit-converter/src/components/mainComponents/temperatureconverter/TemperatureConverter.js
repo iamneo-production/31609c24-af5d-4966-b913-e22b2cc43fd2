@@ -61,7 +61,7 @@ const TemperatureConverter = () => {
         <Row>
           <h3>Temperature Conversion</h3>
           <Row>
-            <Col >
+            <Col>
               <FormGroup>
                 <Label>Enter Source Value in Number</Label>
                 <Input
@@ -73,7 +73,7 @@ const TemperatureConverter = () => {
             </Col>
           </Row>
           <Row>
-            <Col >
+            <Col>
               <FormGroup>
                 <Label>Source Unit</Label>
                 <Input
@@ -86,6 +86,7 @@ const TemperatureConverter = () => {
                       setConvertedValue();
                     } else {
                       setSourceUnit(selectedValue);
+                      setConvertedValue();
                     }
                   }}
                 >
@@ -98,7 +99,7 @@ const TemperatureConverter = () => {
                 </Input>
               </FormGroup>
             </Col>
-            <Col >
+            <Col>
               <FormGroup>
                 <Label>Target Unit</Label>
                 <Input
@@ -111,6 +112,7 @@ const TemperatureConverter = () => {
                       setConvertedValue();
                     } else {
                       setTargetUnit(selectedValue);
+                      setConvertedValue();
                     }
                   }}
                 >

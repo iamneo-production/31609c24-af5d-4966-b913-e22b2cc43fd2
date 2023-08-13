@@ -15,7 +15,7 @@ import "./LengthConverter.css";
 const LengthConverter = () => {
   const [lengthUnits, setLengthUnits] = useState([]);
   const [value, setValue] = useState();
-  const [convertedValue, SetConvertedValue] = useState();
+  const [convertedValue, setConvertedValue] = useState();
   const [sourceUnit, setSourceUnit] = useState();
   const [targetUnit, setTargetUnit] = useState();
 
@@ -33,7 +33,7 @@ const LengthConverter = () => {
   }, []);
 
   useEffect(() => {
-    SetConvertedValue();
+    setConvertedValue();
   }, [value]);
 
   const convertUnits = () => {
@@ -94,7 +94,7 @@ const LengthConverter = () => {
           break;
       }
 
-      SetConvertedValue(convertedValueInTargetUnit);
+      setConvertedValue(convertedValueInTargetUnit);
     }
   };
 
@@ -104,7 +104,7 @@ const LengthConverter = () => {
         <Row>
           <h3>Length Conversion</h3>
           <Row>
-            <Col >
+            <Col>
               <FormGroup>
                 <Label>Enter Source Value in Number</Label>
                 <Input
@@ -116,7 +116,7 @@ const LengthConverter = () => {
             </Col>
           </Row>
           <Row>
-            <Col >
+            <Col>
               <FormGroup>
                 <Label>Source Unit</Label>
                 <Input
@@ -126,9 +126,10 @@ const LengthConverter = () => {
                     const selectedValue = e.target.value;
                     if (selectedValue === "") {
                       setSourceUnit("");
-                      SetConvertedValue();
+                      setConvertedValue();
                     } else {
                       setSourceUnit(selectedValue);
+                      setConvertedValue();
                     }
                   }}
                 >
@@ -141,7 +142,7 @@ const LengthConverter = () => {
                 </Input>
               </FormGroup>
             </Col>
-            <Col >
+            <Col>
               <FormGroup>
                 <Label>Target Unit</Label>
                 <Input
@@ -151,9 +152,10 @@ const LengthConverter = () => {
                     const selectedValue = e.target.value;
                     if (selectedValue === "") {
                       setTargetUnit("");
-                      SetConvertedValue();
+                      setConvertedValue();
                     } else {
                       setTargetUnit(selectedValue);
+                      setConvertedValue();
                     }
                   }}
                 >

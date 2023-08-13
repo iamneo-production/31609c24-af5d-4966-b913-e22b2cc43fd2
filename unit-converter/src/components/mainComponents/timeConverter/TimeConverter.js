@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import {
   Row,
   Col,
@@ -9,14 +10,18 @@ import {
   Card,
   Container,
 } from "reactstrap";
+
 import { fetchTimeUnits } from "../../../api/Api";
-import "./TimeConverter.css";
 
 const TimeConverter = () => {
   const [timeUnits, setTimeUnits] = useState([]);
+
   const [value, setValue] = useState();
+
   const [convertedValue, setConvertedValue] = useState();
+
   const [sourceUnit, setSourceUnit] = useState();
+
   const [targetUnit, setTargetUnit] = useState();
 
   useEffect(() => {
@@ -24,6 +29,7 @@ const TimeConverter = () => {
       .then((data) => {
         setTimeUnits(data);
       })
+
       .catch((error) => {});
   }, []);
 
@@ -82,10 +88,12 @@ const TimeConverter = () => {
       <Card className="card-background p-5 w-75">
         <Row>
           <h3>Time Conversion</h3>
+
           <Row>
             <Col>
               <FormGroup>
                 <Label>Enter Source Value in Number</Label>
+
                 <Input
                   type="number"
                   value={value}
@@ -94,24 +102,30 @@ const TimeConverter = () => {
               </FormGroup>
             </Col>
           </Row>
+
           <Row>
             <Col>
               <FormGroup>
                 <Label>Source Unit</Label>
+
                 <Input
                   type="select"
                   value={sourceUnit}
                   onChange={(e) => {
                     const selectedValue = e.target.value;
+
                     if (selectedValue === "") {
                       setSourceUnit("");
+
                       setConvertedValue();
                     } else {
                       setSourceUnit(selectedValue);
+                      setConvertedValue();
                     }
                   }}
                 >
                   <option value="">Select</option>
+
                   {timeUnits.map((unit) => (
                     <option key={unit} value={unit}>
                       {unit}
@@ -120,23 +134,29 @@ const TimeConverter = () => {
                 </Input>
               </FormGroup>
             </Col>
+
             <Col>
               <FormGroup>
                 <Label>Target Unit</Label>
+
                 <Input
                   type="select"
                   value={targetUnit}
                   onChange={(e) => {
                     const selectedValue = e.target.value;
+
                     if (selectedValue === "") {
                       setTargetUnit("");
+
                       setConvertedValue();
                     } else {
                       setTargetUnit(selectedValue);
+                      setConvertedValue();
                     }
                   }}
                 >
                   <option value="">Select</option>
+
                   {timeUnits.map((unit) => (
                     <option key={unit} value={unit}>
                       {unit}
@@ -146,6 +166,7 @@ const TimeConverter = () => {
               </FormGroup>
             </Col>
           </Row>
+
           <Row className="mb-4">
             <Col>
               <Button onClick={convertUnits} disabled={!targetUnit} outline>
