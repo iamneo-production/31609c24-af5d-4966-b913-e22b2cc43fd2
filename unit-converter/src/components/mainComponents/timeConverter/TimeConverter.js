@@ -71,8 +71,9 @@ const TimeConverter = () => {
           break;
         
         }
-      }
+      
       setConvertedValue(convertedValueResult);
+    }
     
   };
 
