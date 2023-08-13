@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import {
   Row,
   Col,
@@ -9,13 +10,18 @@ import {
   Card,
   Container,
 } from "reactstrap";
+
 import { fetchSpeedUnits } from "../../../api/Api";
 
 const SpeedConverter = () => {
   const [speedUnits, setSpeedUnits] = useState([]);
+
   const [value, setValue] = useState();
+
   const [convertedValue, setConvertedValue] = useState();
+
   const [sourceUnit, setSourceUnit] = useState();
+
   const [targetUnit, setTargetUnit] = useState();
 
   useEffect(() => {
@@ -23,6 +29,7 @@ const SpeedConverter = () => {
       .then((data) => {
         setSpeedUnits(data);
       })
+
       .catch((error) => {});
   }, []);
 
@@ -32,31 +39,44 @@ const SpeedConverter = () => {
 
   const convertUnits = () => {
     if (value && sourceUnit && targetUnit) {
-      let convertedValueResult = value;
+      let convertedValueMeterPerSecond = value;
 
       switch (sourceUnit) {
         case "miles_per_hour":
-          if (targetUnit === "kilometers_per_hour") {
-            convertedValueResult = value * 1.60934;
-          } else if (targetUnit === "meters_per_second") {
-            convertedValueResult = value * 0.44704;
-          }
+          convertedValueMeterPerSecond = value * 0.44704;
+
           break;
 
         case "kilometers_per_hour":
-          if (targetUnit === "miles_per_hour") {
-            convertedValueResult = value * 0.621371;
-          } else if (targetUnit === "meters_per_second") {
-            convertedValueResult = value * 0.277778;
-          }
+          convertedValueMeterPerSecond = value * 0.277778;
+
           break;
 
         case "meters_per_second":
-          if (targetUnit === "miles_per_hour") {
-            convertedValueResult = value * 2.23694;
-          } else if (targetUnit === "kilometers_per_hour") {
-            convertedValueResult = value * 3.6;
-          }
+          convertedValueMeterPerSecond = value;
+
+          break;
+
+        default:
+          break;
+      }
+
+      let convertedValueResult = convertedValueMeterPerSecond;
+
+      switch (targetUnit) {
+        case "miles_per_hour":
+          convertedValueResult *= 2.23694;
+
+          break;
+
+        case "kilometers_per_hour":
+          convertedValueResult *= 3.6;
+
+          break;
+
+        case "meters_per_second":
+          convertedValueResult = convertedValueMeterPerSecond;
+
           break;
 
         default:
@@ -72,10 +92,12 @@ const SpeedConverter = () => {
       <Card className="card-background p-5 w-75">
         <Row>
           <h3>Speed Conversion</h3>
+
           <Row>
-            <Col >
+            <Col>
               <FormGroup>
                 <Label>Enter Source Value in Number</Label>
+
                 <Input
                   type="number"
                   value={value}
@@ -84,17 +106,21 @@ const SpeedConverter = () => {
               </FormGroup>
             </Col>
           </Row>
+
           <Row>
-            <Col >
+            <Col>
               <FormGroup>
                 <Label>Source Unit</Label>
+
                 <Input
                   type="select"
                   value={sourceUnit}
                   onChange={(e) => {
                     const selectedValue = e.target.value;
+
                     if (selectedValue === "") {
                       setSourceUnit("");
+
                       setConvertedValue();
                     } else {
                       setSourceUnit(selectedValue);
@@ -102,6 +128,7 @@ const SpeedConverter = () => {
                   }}
                 >
                   <option value="">Select</option>
+
                   {speedUnits.map((unit) => (
                     <option key={unit} value={unit}>
                       {unit}
@@ -110,16 +137,20 @@ const SpeedConverter = () => {
                 </Input>
               </FormGroup>
             </Col>
-            <Col >
+
+            <Col>
               <FormGroup>
                 <Label>Target Unit</Label>
+
                 <Input
                   type="select"
                   value={targetUnit}
                   onChange={(e) => {
                     const selectedValue = e.target.value;
+
                     if (selectedValue === "") {
                       setTargetUnit("");
+
                       setConvertedValue();
                     } else {
                       setTargetUnit(selectedValue);
@@ -127,6 +158,7 @@ const SpeedConverter = () => {
                   }}
                 >
                   <option value="">Select</option>
+
                   {speedUnits.map((unit) => (
                     <option key={unit} value={unit}>
                       {unit}
@@ -136,6 +168,7 @@ const SpeedConverter = () => {
               </FormGroup>
             </Col>
           </Row>
+
           <Row className="mb-4">
             <Col>
               <Button onClick={convertUnits} disabled={!targetUnit} outline>
@@ -143,6 +176,7 @@ const SpeedConverter = () => {
               </Button>
             </Col>
           </Row>
+
           {convertedValue !== undefined && value !== undefined && (
             <p>
               {value} {sourceUnit} = {convertedValue} {targetUnit}
