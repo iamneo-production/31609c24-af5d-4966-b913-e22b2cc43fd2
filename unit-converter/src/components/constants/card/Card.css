@@ -1,4 +1,4 @@
-.card {
+.cardComponent {
   background: rgb(238, 174, 202);
   background: radial-gradient(
     circle,
@@ -6,8 +6,16 @@
     rgba(148, 187, 233, 1) 100%
   );
 
-  max-height: 17rem;
+  max-height: 9rem;
   max-width: 14rem;
 
   padding: 1rem;
+}
+
+.cardComponent:hover {
+  background: radial-gradient(
+    circle,
+    rgba(250, 190, 220, 1) 0%,
+    rgba(168, 199, 238, 1) 100%
+  );
 }

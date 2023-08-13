@@ -1,7 +1,7 @@
 import "./UnitConverter.css";
 import Cards from "../../constants/card/Cards";
 import { unitTypes } from "../../constants/ConstantJson";
-import { Row } from "reactstrap";
+import { Container, Row } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
 const UnitConverter = () => {
@@ -10,7 +10,7 @@ const UnitConverter = () => {
     navigate(route);
   };
   return (
-    <Row className="container-fluid app-body">
+    <Container className="container-fluid app-body">
       <Row className="mb-4">
         <h3>Welcome to Unit - Converter</h3>
       </Row>
@@ -31,7 +31,7 @@ const UnitConverter = () => {
           ))}
         </div>
       </Row>
-    </Row>
+    </Container>
   );
 };
 

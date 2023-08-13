@@ -4,8 +4,8 @@ import { Card, CardBody, CardText, CardTitle, Button } from "reactstrap";
 
 const Cards = ({ title, text, buttonText, buttonFunction }) => {
   return (
-    <Card className="cardComponent">
-      <CardBody>
+    <Card className="cardComponent shadow p-3 mb-5 bg-white rounded">
+      <CardBody className="hover-zoom">
         <CardTitle><b>{title}</b></CardTitle>
         <CardText>{text}</CardText>
       </CardBody>
