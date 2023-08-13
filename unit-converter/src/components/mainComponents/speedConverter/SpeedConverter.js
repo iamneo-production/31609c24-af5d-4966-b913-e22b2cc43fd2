@@ -73,7 +73,7 @@ const SpeedConverter = () => {
           break;
 
         case "meters_per_second":
-          convertedValueResult = convertedValueMeterPerSecond;
+          convertedValueResult;
 
           break;
 
