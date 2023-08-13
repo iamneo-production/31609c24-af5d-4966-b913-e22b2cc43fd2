@@ -124,6 +124,7 @@ const SpeedConverter = () => {
                       setConvertedValue();
                     } else {
                       setSourceUnit(selectedValue);
+                      setConvertedValue();
                     }
                   }}
                 >
@@ -154,6 +155,7 @@ const SpeedConverter = () => {
                       setConvertedValue();
                     } else {
                       setTargetUnit(selectedValue);
+                      setConvertedValue();
                     }
                   }}
                 >

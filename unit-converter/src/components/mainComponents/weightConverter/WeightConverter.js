@@ -16,7 +16,7 @@ import { fetchWeightUnits } from "../../../api/Api";
 const WeightConverter = () => {
   const [weightUnits, setWeightUnits] = useState([]);
   const [value, setValue] = useState();
-  const [convertedValue, SetConvertedValue] = useState();
+  const [convertedValue, setConvertedValue] = useState();
   const [sourceUnit, setSourceUnit] = useState();
   const [targetUnit, setTargetUnit] = useState();
 
@@ -29,7 +29,7 @@ const WeightConverter = () => {
   }, []);
 
   useEffect(() => {
-    SetConvertedValue();
+    setConvertedValue();
   }, [value]);
 
   const convertUnits = () => {
@@ -72,7 +72,7 @@ const WeightConverter = () => {
           break;
       }
 
-      SetConvertedValue(convertedValueInTargetUnit);
+      setConvertedValue(convertedValueInTargetUnit);
     }
   };
 
@@ -104,9 +104,10 @@ const WeightConverter = () => {
                     const selectedValue = e.target.value;
                     if (selectedValue === "") {
                       setSourceUnit("");
-                      SetConvertedValue();
+                      setConvertedValue();
                     } else {
                       setSourceUnit(selectedValue);
+                      setConvertedValue();
                     }
                   }}
                 >
@@ -129,9 +130,10 @@ const WeightConverter = () => {
                     const selectedValue = e.target.value;
                     if (selectedValue === "") {
                       setTargetUnit("");
-                      SetConvertedValue();
+                      setConvertedValue();
                     } else {
                       setTargetUnit(selectedValue);
+                      setConvertedValue();
                     }
                   }}
                 >
