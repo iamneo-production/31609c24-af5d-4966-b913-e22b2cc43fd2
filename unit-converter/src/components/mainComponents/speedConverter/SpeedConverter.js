@@ -32,37 +32,48 @@ const SpeedConverter = () => {
 
   const convertUnits = () => {
     if (value && sourceUnit && targetUnit) {
-      let convertedValueResult = value;
+      let convertedValueMeterPerSecond = value;
 
       switch (sourceUnit) {
         case "miles_per_hour":
-          if (targetUnit === "kilometers_per_hour") {
-            convertedValueResult = value * 1.60934;
-          } else if (targetUnit === "meters_per_second") {
-            convertedValueResult = value * 0.44704;
-          }
+          
+            convertedValueMeterPerSecond = value * 0.44704;
+          
           break;
 
         case "kilometers_per_hour":
-          if (targetUnit === "miles_per_hour") {
-            convertedValueResult = value * 0.621371;
-          } else if (targetUnit === "meters_per_second") {
-            convertedValueResult = value * 0.277778;
-          }
+          
+            convertedValueMeterPerSecond = value * 0.277778;
+          
           break;
 
         case "meters_per_second":
-          if (targetUnit === "miles_per_hour") {
-            convertedValueResult = value * 2.23694;
-          } else if (targetUnit === "kilometers_per_hour") {
-            convertedValueResult = value * 3.6;
-          }
+          convertedValueMeterPerSecond=value;
           break;
 
         default:
           break;
       }
+      let convertedValueResult = convertedValueInMeterPerSecond;
+      switch(targetUnit){
+        case "miles_per_hour":
+            convertedValueResult *= 2.23694;
+  
+          break;
 
+        case "kilometers_per_hour":
+          
+            convertedValueResult *= 3.6;
+          
+          break;
+
+        case "meters_per_second":
+          convertedValueResult=convertedValueMeterPerSecond;
+          break;
+
+        default:
+          break;
+      }
       setConvertedValue(convertedValueResult);
     }
   };
