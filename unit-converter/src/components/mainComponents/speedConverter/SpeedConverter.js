@@ -60,10 +60,8 @@ const SpeedConverter = () => {
         default:
           break;
       }
-
       let convertedValueResult = convertedValueMeterPerSecond;
-
-      switch (targetUnit) {
+      switch(targetUnit){
         case "miles_per_hour":
           convertedValueResult *= 2.23694;
 

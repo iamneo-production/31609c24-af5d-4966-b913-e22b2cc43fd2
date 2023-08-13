@@ -33,43 +33,47 @@ const TimeConverter = () => {
 
   const convertUnits = () => {
     if (value && sourceUnit && targetUnit) {
-      let convertedValueResult = value;
+      let convertedValueMinutes = value;
 
       switch (sourceUnit) {
         case "seconds":
-          if (targetUnit === "minutes") {
-            convertedValueResult = value / 60;
-          }
-          if (targetUnit === "hours") {
-            convertedValueResult = value / 3600;
-          }
+          
+            convertedValueMinutes = value / 60;
+         
           break;
 
         case "minutes":
-          if (targetUnit === "seconds") {
-            convertedValueResult = value * 60;
-          }
-          if (targetUnit === "hours") {
-            convertedValueResult = value / 60;
-          }
+          convertedValueMinutes=value;
           break;
 
         case "hours":
-          if (targetUnit === "minutes") {
-            convertedValueResult = value * 60;
-          }
-
-          if (targetUnit === "seconds") {
-            convertedValueResult = value * 3600;
-          }
+      
+            convertedValueMinutes = value * 60;
+        
+          
           break;
 
         default:
           break;
       }
-
+      let convertedValueResult = convertedValueMinutes;
+      switch(targetUnit){
+        case "hours":
+          convertedValueResult/=60;
+          break;
+        case "minutes":
+          convertedValueResult=convertedValueMinutes;
+          break;
+        case "seconds":
+          convertedValueResult*=60;
+        break;
+        default:
+          break;
+        
+        }
+      }
       setConvertedValue(convertedValueResult);
-    }
+    
   };
 
   return (
@@ -158,6 +162,6 @@ const TimeConverter = () => {
       </Card>
     </Container>
   );
-};
+          };
 
 export default TimeConverter;
